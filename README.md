@@ -22,7 +22,7 @@ M.S. in Computer Science from Huazhong University of Science and Technology (HUS
 
 #### Open Source & Publications
 
-- Published at **CCF-B** conference (Service Computing)
+- Published at **CCF-B** conference — [Fault-Tolerating Edge Computing with Server Redundancy Based on a Variant of Group Degree Centrality](https://www.researchgate.net/publication/347461271_Fault-Tolerating_Edge_Computing_with_Server_Redundancy_Based_on_a_Variant_of_Group_Degree_Centrality) (IEEE SCC 2020)
 - Contributor to [goInception](https://github.com/hanchuanchuan/goInception) — Fixed pipe deadlock bug in gh-ost execution
 - Contributor to [Gaea](https://github.com/XiaoMi/Gaea) — Online schema change for sharded tables
 - Contributor to Soar (SQL Audit) — MySQL syntax compatibility fixes
