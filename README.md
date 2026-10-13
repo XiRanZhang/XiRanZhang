@@ -33,9 +33,13 @@ M.S. in Computer Science from Huazhong University of Science and Technology (HUS
 
 - **[goInception #718](https://github.com/hanchuanchuan/goInception/pull/718)** — Fixed a pipe deadlock in the gh-ost executor: an inaccurate InnoDB row estimate overflows the progress counter, the reader exits, and the pipe blocks. In production this symptom hung migrations for over an hour. Three lines of code — the work was the diagnosis. *(PR open, awaiting review.)*
 
-- **Gaea · Soar · KubeBlocks** — Contributions to Xiaomi's MySQL sharding proxy (online DDL for sharded tables), the SQL audit engine, and the KubeBlocks-based operator. These were made against Xiaomi's internal codebases, so they don't appear in my public commit history; the public repos are downstream mirrors.
+- **Building on open source** — My work with **[KubeBlocks](https://github.com/apecloud/kubeblocks)** (the stateful MySQL Operator), **[Gaea](https://github.com/XiaoMi/Gaea)** (its management plane) and **[Soar](https://github.com/XiaoMi/soar)** (the audit engine) is against Xiaomi's internal codebases, so it doesn't appear in my public commit history — the public repos are downstream mirrors.
 
 - **CCF-B publication** — [Fault-Tolerating Edge Computing with Server Redundancy Based on a Variant of Group Degree Centrality](https://www.researchgate.net/publication/347461271_Fault-Tolerating_Edge_Computing_with_Server_Redundancy_Based_on_a_Variant_of_Group_Degree_Centrality) (IEEE SCC 2020)
+
+#### Interested In
+
+Quorum-aware scheduling for stateful workloads · Kubernetes operators that respect database protocol semantics · AI agents that can operate databases without being able to break them.
 
 ---
 
