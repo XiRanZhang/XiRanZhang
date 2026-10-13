@@ -1,6 +1,8 @@
 ### Hi there 👋
 
-I'm XiRanZhang, a Backend Engineer at **Xiaomi** with 4 years of experience in database infrastructure.
+I'm **XiRanZhang** (张曦冉), a backend engineer at **Xiaomi** with 4 years in database infrastructure — MySQL at scale, and stateful databases on Kubernetes.
+
+I'm currently writing an open book: **[有状态工作负载在 Kubernetes 上的调度与运维](https://xiranzhang.github.io/book/)** (Stateful Workloads on Kubernetes: Scheduling & Operations). It's about why Pod-level control can't express quorum, database roles, and membership invariants — and what to actually do about it.
 
 M.S. in Computer Science from Huazhong University of Science and Technology (HUST), B.S. from Wuhan University of Technology.
 
@@ -8,21 +10,33 @@ M.S. in Computer Science from Huazhong University of Science and Technology (HUS
 
 #### What I Do
 
-- **MySQL Operations at Scale** — Building and maintaining the operations platform for **2000+ MySQL clusters**. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration) and [Orchestrator](https://github.com/openark/orchestrator) (HA & replication management).
+- **MySQL at Scale** — Building and maintaining the platform behind **2000+ MySQL clusters across 20+ data centers**. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration) and [Orchestrator](https://github.com/openark/orchestrator) (HA & replication management).
 
-- **Cloud-Native Database (KubeBlocks)** — Contributing to [KubeBlocks](https://github.com/apecloud/kubeblocks) for Kubernetes-native database management. Implemented **horizontal & vertical scaling** for database clusters, with support for **heterogeneous storage volume expansion**.
+- **Stateful MySQL on Kubernetes** — Core developer of a stateful MySQL Operator built on [KubeBlocks](https://github.com/apecloud/kubeblocks). I own backup verification/replay, data-carrying horizontal scaling, and online bidirectional migration between bare metal and containers. Scaling a stateful instance means keeping data intact across PVC binding, replica sync, and topology change — the real difficulty is making that sequence ordered and idempotent when controllers update concurrently.
 
-- **Multi-Cluster Orchestration** — Designed multi-strategy scheduling algorithms (round-robin / load-balancing / topology-affinity) for cross-AZ/Region MySQL container clusters, with a pluggable operations interface framework.
+- **Unified SQL Execution Layer** — Designed and built from zero the single execution gateway for every platform SQL change: audit → approval → execute → callback → auto-rollback. Rebuilt the connection pool after a lock-contention diagnosis (network I/O held inside locks, plus a mutex on the hot path).
 
-- **Database Middleware** — Contributor to [Gaea](https://github.com/XiaoMi/Gaea) (Xiaomi's MySQL proxy). Added **online DDL support for sharded tables**.
+- **Database AI Access Layer (MCP)** — Exposed the database platform as **76 standardized agent tools** (query, audit, ticketing, slow-query diagnosis, instance management). Four concurrent auth modes, tool-level isolation between regular users and DBAs, and guardrails that let an LLM open a SQL change without letting it push one through unsupervised.
 
-- **MCP Development** — Building MCP (Model Context Protocol) tools to integrate AI capabilities into database operations workflows.
+- **Database Control Plane (DBaaS)** — SQL change ticketing with sharding-aware routing and AST-based rule grading; multi-region backup across MySQL 5.5–8.0; the management plane for Xiaomi's sharding middleware Gaea (cluster/node management, failover, hot config reload, online migration off HAProxy); and a `DBService` engine abstraction that cut new-engine onboarding work by 70% across MySQL / PostgreSQL / OceanBase.
 
-- **Unified Database Platform** — Architected an abstraction layer for heterogeneous databases (MySQL, PostgreSQL, OceanBase, etc.) with a dual-track engine design and async task framework managing 10K+ instances.
+#### Selected Results
+
+| Area | Result |
+| --- | --- |
+| SQL execution layer | **P50 8.3s → 98ms** (−99%), throughput **×155** at 35 concurrent targets |
+| Backup verification | **6,600+** production backups replay-verified end to end |
+| Database AI layer | **500+** instances, **5,000+** agent calls per day |
+| Slow query & traffic replay | Business **P95 down 40%** across all clusters |
 
 #### Open Source & Publications
 
-- Published at **CCF-B** conference — [Fault-Tolerating Edge Computing with Server Redundancy Based on a Variant of Group Degree Centrality](https://www.researchgate.net/publication/347461271_Fault-Tolerating_Edge_Computing_with_Server_Redundancy_Based_on_a_Variant_of_Group_Degree_Centrality) (IEEE SCC 2020)
-- Contributor to [goInception](https://github.com/hanchuanchuan/goInception) — Fixed pipe deadlock bug in gh-ost execution
-- Contributor to [Gaea](https://github.com/XiaoMi/Gaea) — Online schema change for sharded tables
-- Contributor to Soar (SQL Audit) — MySQL syntax compatibility fixes
+- **[goInception #718](https://github.com/hanchuanchuan/goInception/pull/718)** — Fixed a pipe deadlock in the gh-ost executor: an inaccurate InnoDB row estimate overflows the progress counter, the reader exits, and the pipe blocks. In production this symptom hung migrations for over an hour. Three lines of code — the work was the diagnosis. *(PR open, awaiting review.)*
+
+- **Gaea · Soar · KubeBlocks** — Contributions to Xiaomi's MySQL sharding proxy (online DDL for sharded tables), the SQL audit engine, and the KubeBlocks-based operator. These were made against Xiaomi's internal codebases, so they don't appear in my public commit history; the public repos are downstream mirrors.
+
+- **CCF-B publication** — [Fault-Tolerating Edge Computing with Server Redundancy Based on a Variant of Group Degree Centrality](https://www.researchgate.net/publication/347461271_Fault-Tolerating_Edge_Computing_with_Server_Redundancy_Based_on_a_Variant_of_Group_Degree_Centrality) (IEEE SCC 2020)
+
+---
+
+📖 [Book](https://xiranzhang.github.io/book/) · ✍️ [All writing](https://xiranzhang.github.io/) · 💬 [Technical discussions](https://github.com/XiRanZhang/XiRanZhang.github.io/issues)
