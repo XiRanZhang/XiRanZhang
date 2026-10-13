@@ -10,24 +10,15 @@ M.S. in Computer Science from Huazhong University of Science and Technology (HUS
 
 #### What I Do
 
-- **MySQL at Scale** — Building and maintaining the platform behind **2000+ MySQL clusters across 20+ data centers**. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration) and [Orchestrator](https://github.com/openark/orchestrator) (HA & replication management).
+- **MySQL at Scale** — Building and maintaining the platform behind a large MySQL fleet spanning multiple data centers. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration) and [Orchestrator](https://github.com/openark/orchestrator) (HA & replication management).
 
 - **Stateful MySQL on Kubernetes** — Core developer of a stateful MySQL Operator built on [KubeBlocks](https://github.com/apecloud/kubeblocks). I own backup verification/replay, data-carrying horizontal scaling, and online bidirectional migration between bare metal and containers. Scaling a stateful instance means keeping data intact across PVC binding, replica sync, and topology change — the real difficulty is making that sequence ordered and idempotent when controllers update concurrently.
 
-- **Unified SQL Execution Layer** — Designed and built from zero the single execution gateway for every platform SQL change: audit → approval → execute → callback → auto-rollback. Rebuilt the connection pool after a lock-contention diagnosis (network I/O held inside locks, plus a mutex on the hot path).
+- **Unified SQL Execution Layer** — Designed and built from zero the single execution gateway for every platform SQL change: audit → approval → execute → callback → auto-rollback. Rebuilt the connection pool after a lock-contention diagnosis (network I/O held inside locks, plus a mutex on the hot path), cutting request latency by orders of magnitude under concurrent load.
 
-- **Database AI Access Layer (MCP)** — Exposed the database platform as **76 standardized agent tools** (query, audit, ticketing, slow-query diagnosis, instance management). Four concurrent auth modes, tool-level isolation between regular users and DBAs, and guardrails that let an LLM open a SQL change without letting it push one through unsupervised.
+- **Database AI Access Layer (MCP)** — Exposed the database platform as a suite of standardized agent tools (query, audit, ticketing, slow-query diagnosis, instance management), with multiple concurrent auth modes, tool-level isolation between regular users and DBAs, and guardrails that let an LLM open a SQL change without letting it push one through unsupervised.
 
-- **Database Control Plane (DBaaS)** — SQL change ticketing with sharding-aware routing and AST-based rule grading; multi-region backup across MySQL 5.5–8.0; the management plane for Xiaomi's sharding middleware Gaea (cluster/node management, failover, hot config reload, online migration off HAProxy); and a `DBService` engine abstraction that cut new-engine onboarding work by 70% across MySQL / PostgreSQL / OceanBase.
-
-#### Selected Results
-
-| Area | Result |
-| --- | --- |
-| SQL execution layer | **P50 8.3s → 98ms** (−99%), throughput **×155** at 35 concurrent targets |
-| Backup verification | **6,600+** production backups replay-verified end to end |
-| Database AI layer | **500+** instances, **5,000+** agent calls per day |
-| Slow query & traffic replay | Business **P95 down 40%** across all clusters |
+- **Database Control Plane (DBaaS)** — SQL change ticketing with sharding-aware routing and AST-based rule grading; multi-region backup across major MySQL versions; the management plane for Xiaomi's sharding middleware Gaea (cluster/node management, failover, hot config reload, online migration off HAProxy); and a `DBService` engine abstraction that reduces onboarding a new engine to a fraction of the original work across MySQL / PostgreSQL / OceanBase.
 
 #### Open Source & Publications
 
