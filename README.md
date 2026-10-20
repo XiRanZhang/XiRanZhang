@@ -2,7 +2,7 @@
 
 I'm **XiRanZhang** (张曦冉), a backend engineer at **Xiaomi** with 4 years in database infrastructure — MySQL at scale, and stateful databases on Kubernetes.
 
-I'm currently writing an open book: **[有状态工作负载在 Kubernetes 上的调度与运维](https://xiranzhang.github.io/book/)** (Stateful Workloads on Kubernetes: Scheduling & Operations). It's about why Pod-level control can't express quorum, database roles, and membership invariants — and what to actually do about it.
+I'm publishing a series of technical articles on **[stateful workloads on Kubernetes](https://xiranzhang.github.io/stateful/)** — quorum, database roles and membership invariants, and why Pod-level control can't express any of them.
 
 M.S. in Computer Science from Huazhong University of Science and Technology (HUST), B.S. from Wuhan University of Technology.
 
@@ -34,4 +34,4 @@ Quorum-aware scheduling for stateful workloads · Kubernetes operators that resp
 
 ---
 
-📖 [Book](https://xiranzhang.github.io/book/) · ✍️ [All writing](https://xiranzhang.github.io/) · 💬 [Technical discussions](https://github.com/XiRanZhang/XiRanZhang.github.io/issues)
+✍️ [All writing](https://xiranzhang.github.io/) · 💬 [Technical discussions](https://github.com/XiRanZhang/XiRanZhang.github.io/issues)
