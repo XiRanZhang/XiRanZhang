@@ -10,7 +10,7 @@ M.S. in Computer Science from Huazhong University of Science and Technology (HUS
 
 #### What I Do
 
-- **MySQL at Scale** — Building and maintaining the platform behind a large MySQL fleet spanning multiple data centers. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration) and [Orchestrator](https://github.com/openark/orchestrator) (HA & replication management).
+- **MySQL at Scale** — Building and maintaining the platform behind a large MySQL fleet spanning multiple data centers. Deep source-level expertise in [gh-ost](https://github.com/github/gh-ost) (online schema migration).
 
 - **Stateful MySQL on Kubernetes** — Core developer of a stateful MySQL Operator built on [KubeBlocks](https://github.com/apecloud/kubeblocks). I own backup verification/replay, data-carrying horizontal scaling, and online bidirectional migration between bare metal and containers. Scaling a stateful instance means keeping data intact across PVC binding, replica sync, and topology change — the real difficulty is making that sequence ordered and idempotent when controllers update concurrently.
 
